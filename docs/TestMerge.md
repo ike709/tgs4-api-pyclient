@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**merged_by** | [**AllOfTestMergeMergedBy**](AllOfTestMergeMergedBy.md) | The Tgstation.Server.Api.Models.User who created the Tgstation.Server.Api.Models.TestMerge | [optional] 
-**id** | **int** | The ID of the Tgstation.Server.Api.Models.Internal.TestMerge | [optional] 
-**merged_at** | **datetime** | When the Tgstation.Server.Api.Models.Internal.TestMerge was created | [optional] 
+**merged_by** | [**AllOfTestMergeMergedBy**](AllOfTestMergeMergedBy.md) | The Tgstation.Server.Api.Models.NamedEntity of the user who created the Tgstation.Server.Api.Models.TestMerge. | [optional] 
+**id** | **int** | The ID of the Tgstation.Server.Api.Models.Internal.TestMergeApiBase | [optional] 
+**merged_at** | **datetime** | When the Tgstation.Server.Api.Models.Internal.TestMergeApiBase was created | [optional] 
 **title_at_merge** | **str** | The title of the test merge source. | [optional] 
 **body_at_merge** | **str** | The body of the test merge source. | [optional] 
 **url** | **str** | The URL of the test merge source. | [optional] 

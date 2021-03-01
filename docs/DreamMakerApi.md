@@ -1,17 +1,17 @@
 # swagger_client.DreamMakerApi
 
-All URIs are relative to */*
+All URIs are relative to *http://localhost:5010*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**dream_maker_controller_create**](DreamMakerApi.md#dream_maker_controller_create) | **PUT** /DreamMaker | Begin deploying repository code.
-[**dream_maker_controller_get_id**](DreamMakerApi.md#dream_maker_controller_get_id) | **GET** /DreamMaker/{id} | Get a Tgstation.Server.Api.Models.CompileJob specified by a given id.
-[**dream_maker_controller_list**](DreamMakerApi.md#dream_maker_controller_list) | **GET** /DreamMaker/List | List all Tgstation.Server.Api.Models.CompileJobTgstation.Server.Api.Models.EntityIds for the instance.
-[**dream_maker_controller_read**](DreamMakerApi.md#dream_maker_controller_read) | **GET** /DreamMaker | Read current Tgstation.Server.Api.Models.DreamMaker status.
+[**dream_maker_controller_get_id**](DreamMakerApi.md#dream_maker_controller_get_id) | **GET** /DreamMaker/{id} | Get a Tgstation.Server.Host.Models.CompileJob specified by a given id.
+[**dream_maker_controller_list**](DreamMakerApi.md#dream_maker_controller_list) | **GET** /DreamMaker/List | List all Tgstation.Server.Host.Models.CompileJobTgstation.Server.Api.Models.EntityIds for the instance.
+[**dream_maker_controller_read**](DreamMakerApi.md#dream_maker_controller_read) | **GET** /DreamMaker | Read current deployment settings.
 [**dream_maker_controller_update**](DreamMakerApi.md#dream_maker_controller_update) | **POST** /DreamMaker | Update deployment settings.
 
 # **dream_maker_controller_create**
-> Job dream_maker_controller_create(api, user_agent, instance)
+> JobResponse dream_maker_controller_create(api, user_agent, instance)
 
 Begin deploying repository code.
 
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Job**](Job.md)
+[**JobResponse**](JobResponse.md)
 
 ### Authorization
 
@@ -62,9 +62,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **dream_maker_controller_get_id**
-> CompileJob dream_maker_controller_get_id(api, user_agent, instance, id)
+> CompileJobResponse dream_maker_controller_get_id(api, user_agent, instance, id)
 
-Get a Tgstation.Server.Api.Models.CompileJob specified by a given id.
+Get a Tgstation.Server.Host.Models.CompileJob specified by a given id.
 
 ### Example
 ```python
@@ -83,7 +83,7 @@ instance = 56 # int | The instance ID being accessed
 id = 789 # int | The Tgstation.Server.Api.Models.EntityId.Id.
 
 try:
-    # Get a Tgstation.Server.Api.Models.CompileJob specified by a given id.
+    # Get a Tgstation.Server.Host.Models.CompileJob specified by a given id.
     api_response = api_instance.dream_maker_controller_get_id(api, user_agent, instance, id)
     pprint(api_response)
 except ApiException as e:
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CompileJob**](CompileJob.md)
+[**CompileJobResponse**](CompileJobResponse.md)
 
 ### Authorization
 
@@ -115,9 +115,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **dream_maker_controller_list**
-> PaginatedCompileJob dream_maker_controller_list(api, user_agent, instance, page=page, page_size=page_size)
+> PaginatedCompileJobResponse dream_maker_controller_list(api, user_agent, instance, page=page, page_size=page_size)
 
-List all Tgstation.Server.Api.Models.CompileJobTgstation.Server.Api.Models.EntityIds for the instance.
+List all Tgstation.Server.Host.Models.CompileJobTgstation.Server.Api.Models.EntityIds for the instance.
 
 ### Example
 ```python
@@ -137,7 +137,7 @@ page = 56 # int | The current page. (optional)
 page_size = 56 # int | The page size. (optional)
 
 try:
-    # List all Tgstation.Server.Api.Models.CompileJobTgstation.Server.Api.Models.EntityIds for the instance.
+    # List all Tgstation.Server.Host.Models.CompileJobTgstation.Server.Api.Models.EntityIds for the instance.
     api_response = api_instance.dream_maker_controller_list(api, user_agent, instance, page=page, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedCompileJob**](PaginatedCompileJob.md)
+[**PaginatedCompileJobResponse**](PaginatedCompileJobResponse.md)
 
 ### Authorization
 
@@ -170,9 +170,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **dream_maker_controller_read**
-> DreamMaker dream_maker_controller_read(api, user_agent, instance)
+> DreamMakerResponse dream_maker_controller_read(api, user_agent, instance)
 
-Read current Tgstation.Server.Api.Models.DreamMaker status.
+Read current deployment settings.
 
 ### Example
 ```python
@@ -190,7 +190,7 @@ user_agent = 'user_agent_example' # str | The user agent of the calling client.
 instance = 56 # int | The instance ID being accessed
 
 try:
-    # Read current Tgstation.Server.Api.Models.DreamMaker status.
+    # Read current deployment settings.
     api_response = api_instance.dream_maker_controller_read(api, user_agent, instance)
     pprint(api_response)
 except ApiException as e:
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DreamMaker**](DreamMaker.md)
+[**DreamMakerResponse**](DreamMakerResponse.md)
 
 ### Authorization
 
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **dream_maker_controller_update**
-> DreamMaker dream_maker_controller_update(api, user_agent, instance, body=body)
+> DreamMakerResponse dream_maker_controller_update(body, api, user_agent, instance)
 
 Update deployment settings.
 
@@ -236,14 +236,14 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.DreamMakerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.Body32() # Body32 | The Tgstation.Server.Api.Models.Request.DreamMakerRequest.
 api = 'api_example' # str | The API version being used in the form \"Tgstation.Server.Api/[API version]\"
 user_agent = 'user_agent_example' # str | The user agent of the calling client.
 instance = 56 # int | The instance ID being accessed
-body = swagger_client.Body32() # Body32 | The updated Tgstation.Server.Api.Models.DreamMaker settings. (optional)
 
 try:
     # Update deployment settings.
-    api_response = api_instance.dream_maker_controller_update(api, user_agent, instance, body=body)
+    api_response = api_instance.dream_maker_controller_update(body, api, user_agent, instance)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DreamMakerApi->dream_maker_controller_update: %s\n" % e)
@@ -253,14 +253,14 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**Body32**](Body32.md)| The Tgstation.Server.Api.Models.Request.DreamMakerRequest. | 
  **api** | **str**| The API version being used in the form \&quot;Tgstation.Server.Api/[API version]\&quot; | 
  **user_agent** | **str**| The user agent of the calling client. | 
  **instance** | **int**| The instance ID being accessed | 
- **body** | [**Body32**](Body32.md)| The updated Tgstation.Server.Api.Models.DreamMaker settings. | [optional] 
 
 ### Return type
 
-[**DreamMaker**](DreamMaker.md)
+[**DreamMakerResponse**](DreamMakerResponse.md)
 
 ### Authorization
 

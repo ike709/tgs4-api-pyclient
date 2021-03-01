@@ -1,6 +1,6 @@
 # swagger_client.InstanceApi
 
-All URIs are relative to */*
+All URIs are relative to *http://localhost:5010*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**instance_controller_update**](InstanceApi.md#instance_controller_update) | **POST** /Instance | Modify an Tgstation.Server.Api.Models.Instance&#x27;s settings.
 
 # **instance_controller_create**
-> Instance instance_controller_create(api, user_agent, body=body)
+> InstanceResponse instance_controller_create(body, api, user_agent)
 
 Create or attach an Tgstation.Server.Api.Models.Instance.
 
@@ -27,13 +27,13 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.InstanceApi(swagger_client.ApiClient(configuration))
+body = swagger_client.Body36() # Body36 | The Tgstation.Server.Api.Models.Request.InstanceCreateRequest.
 api = 'api_example' # str | The API version being used in the form \"Tgstation.Server.Api/[API version]\"
 user_agent = 'user_agent_example' # str | The user agent of the calling client.
-body = swagger_client.Body36() # Body36 | The Tgstation.Server.Api.Models.Instance settings. (optional)
 
 try:
     # Create or attach an Tgstation.Server.Api.Models.Instance.
-    api_response = api_instance.instance_controller_create(api, user_agent, body=body)
+    api_response = api_instance.instance_controller_create(body, api, user_agent)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling InstanceApi->instance_controller_create: %s\n" % e)
@@ -43,13 +43,13 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**Body36**](Body36.md)| The Tgstation.Server.Api.Models.Request.InstanceCreateRequest. | 
  **api** | **str**| The API version being used in the form \&quot;Tgstation.Server.Api/[API version]\&quot; | 
  **user_agent** | **str**| The user agent of the calling client. | 
- **body** | [**Body36**](Body36.md)| The Tgstation.Server.Api.Models.Instance settings. | [optional] 
 
 ### Return type
 
-[**Instance**](Instance.md)
+[**InstanceResponse**](InstanceResponse.md)
 
 ### Authorization
 
@@ -113,7 +113,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **instance_controller_get_id**
-> Instance instance_controller_get_id(api, user_agent, id)
+> InstanceResponse instance_controller_get_id(api, user_agent, id)
 
 Get a specific Tgstation.Server.Api.Models.Instance.
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Instance**](Instance.md)
+[**InstanceResponse**](InstanceResponse.md)
 
 ### Authorization
 
@@ -214,7 +214,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **instance_controller_list**
-> PaginatedInstance instance_controller_list(api, user_agent, page=page, page_size=page_size)
+> PaginatedInstanceResponse instance_controller_list(api, user_agent, page=page, page_size=page_size)
 
 List Tgstation.Server.Api.Models.Instances.
 
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedInstance**](PaginatedInstance.md)
+[**PaginatedInstanceResponse**](PaginatedInstanceResponse.md)
 
 ### Authorization
 
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **instance_controller_update**
-> Instance instance_controller_update(api, user_agent, body=body)
+> InstanceResponse instance_controller_update(body, api, user_agent)
 
 Modify an Tgstation.Server.Api.Models.Instance's settings.
 
@@ -282,13 +282,13 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.InstanceApi(swagger_client.ApiClient(configuration))
+body = swagger_client.Body40() # Body40 | The updated Tgstation.Server.Api.Models.Instance settings.
 api = 'api_example' # str | The API version being used in the form \"Tgstation.Server.Api/[API version]\"
 user_agent = 'user_agent_example' # str | The user agent of the calling client.
-body = swagger_client.Body40() # Body40 | The updated Tgstation.Server.Api.Models.Instance settings. (optional)
 
 try:
     # Modify an Tgstation.Server.Api.Models.Instance's settings.
-    api_response = api_instance.instance_controller_update(api, user_agent, body=body)
+    api_response = api_instance.instance_controller_update(body, api, user_agent)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling InstanceApi->instance_controller_update: %s\n" % e)
@@ -298,13 +298,13 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**Body40**](Body40.md)| The updated Tgstation.Server.Api.Models.Instance settings. | 
  **api** | **str**| The API version being used in the form \&quot;Tgstation.Server.Api/[API version]\&quot; | 
  **user_agent** | **str**| The user agent of the calling client. | 
- **body** | [**Body40**](Body40.md)| The updated Tgstation.Server.Api.Models.Instance settings. | [optional] 
 
 ### Return type
 
-[**Instance**](Instance.md)
+[**InstanceResponse**](InstanceResponse.md)
 
 ### Authorization
 

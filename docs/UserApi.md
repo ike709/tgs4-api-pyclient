@@ -1,19 +1,19 @@
 # swagger_client.UserApi
 
-All URIs are relative to */*
+All URIs are relative to *http://localhost:5010*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**user_controller_create**](UserApi.md#user_controller_create) | **PUT** /User | Create a new Tgstation.Server.Api.Models.User.
-[**user_controller_get_id**](UserApi.md#user_controller_get_id) | **GET** /User/{id} | Get a specific Tgstation.Server.Api.Models.User.
-[**user_controller_list**](UserApi.md#user_controller_list) | **GET** /User/List | List all Tgstation.Server.Api.Models.Users in the server.
-[**user_controller_read**](UserApi.md#user_controller_read) | **GET** /User | Get information about the current Tgstation.Server.Api.Models.User.
-[**user_controller_update**](UserApi.md#user_controller_update) | **POST** /User | Update a Tgstation.Server.Api.Models.User.
+[**user_controller_create**](UserApi.md#user_controller_create) | **PUT** /User | Create a new Tgstation.Server.Host.Models.User.
+[**user_controller_get_id**](UserApi.md#user_controller_get_id) | **GET** /User/{id} | Get a specific Tgstation.Server.Host.Models.User.
+[**user_controller_list**](UserApi.md#user_controller_list) | **GET** /User/List | List all Tgstation.Server.Host.Models.Users in the server.
+[**user_controller_read**](UserApi.md#user_controller_read) | **GET** /User | Get information about the current Tgstation.Server.Host.Models.User.
+[**user_controller_update**](UserApi.md#user_controller_update) | **POST** /User | Update a Tgstation.Server.Host.Models.User.
 
 # **user_controller_create**
-> User user_controller_create(api, user_agent, body=body)
+> UserResponse user_controller_create(body, api, user_agent)
 
-Create a new Tgstation.Server.Api.Models.User.
+Create a new Tgstation.Server.Host.Models.User.
 
 ### Example
 ```python
@@ -26,13 +26,13 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.UserApi(swagger_client.ApiClient(configuration))
+body = swagger_client.Body60() # Body60 | The Tgstation.Server.Api.Models.Request.UserCreateRequest.
 api = 'api_example' # str | The API version being used in the form \"Tgstation.Server.Api/[API version]\"
 user_agent = 'user_agent_example' # str | The user agent of the calling client.
-body = swagger_client.Body60() # Body60 | The Tgstation.Server.Api.Models.User to create. (optional)
 
 try:
-    # Create a new Tgstation.Server.Api.Models.User.
-    api_response = api_instance.user_controller_create(api, user_agent, body=body)
+    # Create a new Tgstation.Server.Host.Models.User.
+    api_response = api_instance.user_controller_create(body, api, user_agent)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->user_controller_create: %s\n" % e)
@@ -42,13 +42,13 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**Body60**](Body60.md)| The Tgstation.Server.Api.Models.Request.UserCreateRequest. | 
  **api** | **str**| The API version being used in the form \&quot;Tgstation.Server.Api/[API version]\&quot; | 
  **user_agent** | **str**| The user agent of the calling client. | 
- **body** | [**Body60**](Body60.md)| The Tgstation.Server.Api.Models.User to create. | [optional] 
 
 ### Return type
 
-[**User**](User.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 
@@ -62,9 +62,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **user_controller_get_id**
-> User user_controller_get_id(api, user_agent, id)
+> UserResponse user_controller_get_id(api, user_agent, id)
 
-Get a specific Tgstation.Server.Api.Models.User.
+Get a specific Tgstation.Server.Host.Models.User.
 
 ### Example
 ```python
@@ -79,10 +79,10 @@ from pprint import pprint
 api_instance = swagger_client.UserApi(swagger_client.ApiClient(configuration))
 api = 'api_example' # str | The API version being used in the form \"Tgstation.Server.Api/[API version]\"
 user_agent = 'user_agent_example' # str | The user agent of the calling client.
-id = 789 # int | The Tgstation.Server.Api.Models.Internal.UserBase.Id to retrieve.
+id = 789 # int | The Tgstation.Server.Api.Models.EntityId.Id to retrieve.
 
 try:
-    # Get a specific Tgstation.Server.Api.Models.User.
+    # Get a specific Tgstation.Server.Host.Models.User.
     api_response = api_instance.user_controller_get_id(api, user_agent, id)
     pprint(api_response)
 except ApiException as e:
@@ -95,11 +95,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **api** | **str**| The API version being used in the form \&quot;Tgstation.Server.Api/[API version]\&quot; | 
  **user_agent** | **str**| The user agent of the calling client. | 
- **id** | **int**| The Tgstation.Server.Api.Models.Internal.UserBase.Id to retrieve. | 
+ **id** | **int**| The Tgstation.Server.Api.Models.EntityId.Id to retrieve. | 
 
 ### Return type
 
-[**User**](User.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 
@@ -113,9 +113,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **user_controller_list**
-> PaginatedUser user_controller_list(api, user_agent, page=page, page_size=page_size)
+> PaginatedUserResponse user_controller_list(api, user_agent, page=page, page_size=page_size)
 
-List all Tgstation.Server.Api.Models.Users in the server.
+List all Tgstation.Server.Host.Models.Users in the server.
 
 ### Example
 ```python
@@ -134,7 +134,7 @@ page = 56 # int | The current page. (optional)
 page_size = 56 # int | The page size. (optional)
 
 try:
-    # List all Tgstation.Server.Api.Models.Users in the server.
+    # List all Tgstation.Server.Host.Models.Users in the server.
     api_response = api_instance.user_controller_list(api, user_agent, page=page, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedUser**](PaginatedUser.md)
+[**PaginatedUserResponse**](PaginatedUserResponse.md)
 
 ### Authorization
 
@@ -166,9 +166,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **user_controller_read**
-> User user_controller_read(api, user_agent)
+> UserResponse user_controller_read(api, user_agent)
 
-Get information about the current Tgstation.Server.Api.Models.User.
+Get information about the current Tgstation.Server.Host.Models.User.
 
 ### Example
 ```python
@@ -185,7 +185,7 @@ api = 'api_example' # str | The API version being used in the form \"Tgstation.S
 user_agent = 'user_agent_example' # str | The user agent of the calling client.
 
 try:
-    # Get information about the current Tgstation.Server.Api.Models.User.
+    # Get information about the current Tgstation.Server.Host.Models.User.
     api_response = api_instance.user_controller_read(api, user_agent)
     pprint(api_response)
 except ApiException as e:
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**User**](User.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 
@@ -215,9 +215,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **user_controller_update**
-> User user_controller_update(api, user_agent, body=body)
+> UserResponse user_controller_update(body, api, user_agent)
 
-Update a Tgstation.Server.Api.Models.User.
+Update a Tgstation.Server.Host.Models.User.
 
 ### Example
 ```python
@@ -230,13 +230,13 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.UserApi(swagger_client.ApiClient(configuration))
+body = swagger_client.Body64() # Body64 | The Tgstation.Server.Api.Models.Response.UserResponse to update.
 api = 'api_example' # str | The API version being used in the form \"Tgstation.Server.Api/[API version]\"
 user_agent = 'user_agent_example' # str | The user agent of the calling client.
-body = swagger_client.Body64() # Body64 | The Tgstation.Server.Api.Models.User to update. (optional)
 
 try:
-    # Update a Tgstation.Server.Api.Models.User.
-    api_response = api_instance.user_controller_update(api, user_agent, body=body)
+    # Update a Tgstation.Server.Host.Models.User.
+    api_response = api_instance.user_controller_update(body, api, user_agent)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->user_controller_update: %s\n" % e)
@@ -246,13 +246,13 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**Body64**](Body64.md)| The Tgstation.Server.Api.Models.Response.UserResponse to update. | 
  **api** | **str**| The API version being used in the form \&quot;Tgstation.Server.Api/[API version]\&quot; | 
  **user_agent** | **str**| The user agent of the calling client. | 
- **body** | [**Body64**](Body64.md)| The Tgstation.Server.Api.Models.User to update. | [optional] 
 
 ### Return type
 
-[**User**](User.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 

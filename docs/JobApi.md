@@ -1,18 +1,18 @@
 # swagger_client.JobApi
 
-All URIs are relative to */*
+All URIs are relative to *http://localhost:5010*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**job_controller_delete**](JobApi.md#job_controller_delete) | **DELETE** /Job/{id} | Cancel a running Tgstation.Server.Api.Models.Job.
-[**job_controller_get_id**](JobApi.md#job_controller_get_id) | **GET** /Job/{id} | Get a specific Tgstation.Server.Api.Models.Job.
-[**job_controller_list**](JobApi.md#job_controller_list) | **GET** /Job/List | List all Tgstation.Server.Api.Models.JobTgstation.Server.Api.Models.EntityIds for the instance in reverse creation order.
-[**job_controller_read**](JobApi.md#job_controller_read) | **GET** /Job | Get active Tgstation.Server.Api.Models.Jobs for the instance.
+[**job_controller_delete**](JobApi.md#job_controller_delete) | **DELETE** /Job/{id} | Cancel a running Tgstation.Server.Api.Models.Response.JobResponse.
+[**job_controller_get_id**](JobApi.md#job_controller_get_id) | **GET** /Job/{id} | Get a specific Tgstation.Server.Api.Models.Response.JobResponse.
+[**job_controller_list**](JobApi.md#job_controller_list) | **GET** /Job/List | List all Tgstation.Server.Api.Models.Response.JobResponse for the instance in reverse creation order.
+[**job_controller_read**](JobApi.md#job_controller_read) | **GET** /Job | Get active Tgstation.Server.Api.Models.Response.JobResponses for the instance.
 
 # **job_controller_delete**
-> Job job_controller_delete(api, user_agent, instance, id)
+> JobResponse job_controller_delete(api, user_agent, instance, id)
 
-Cancel a running Tgstation.Server.Api.Models.Job.
+Cancel a running Tgstation.Server.Api.Models.Response.JobResponse.
 
 ### Example
 ```python
@@ -28,10 +28,10 @@ api_instance = swagger_client.JobApi(swagger_client.ApiClient(configuration))
 api = 'api_example' # str | The API version being used in the form \"Tgstation.Server.Api/[API version]\"
 user_agent = 'user_agent_example' # str | The user agent of the calling client.
 instance = 56 # int | The instance ID being accessed
-id = 789 # int | The Tgstation.Server.Api.Models.EntityId.Id of the Tgstation.Server.Api.Models.Job to cancel.
+id = 789 # int | The Tgstation.Server.Api.Models.EntityId.Id of the Tgstation.Server.Api.Models.Response.JobResponse to cancel.
 
 try:
-    # Cancel a running Tgstation.Server.Api.Models.Job.
+    # Cancel a running Tgstation.Server.Api.Models.Response.JobResponse.
     api_response = api_instance.job_controller_delete(api, user_agent, instance, id)
     pprint(api_response)
 except ApiException as e:
@@ -45,11 +45,11 @@ Name | Type | Description  | Notes
  **api** | **str**| The API version being used in the form \&quot;Tgstation.Server.Api/[API version]\&quot; | 
  **user_agent** | **str**| The user agent of the calling client. | 
  **instance** | **int**| The instance ID being accessed | 
- **id** | **int**| The Tgstation.Server.Api.Models.EntityId.Id of the Tgstation.Server.Api.Models.Job to cancel. | 
+ **id** | **int**| The Tgstation.Server.Api.Models.EntityId.Id of the Tgstation.Server.Api.Models.Response.JobResponse to cancel. | 
 
 ### Return type
 
-[**Job**](Job.md)
+[**JobResponse**](JobResponse.md)
 
 ### Authorization
 
@@ -63,9 +63,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **job_controller_get_id**
-> Job job_controller_get_id(api, user_agent, instance, id)
+> JobResponse job_controller_get_id(api, user_agent, instance, id)
 
-Get a specific Tgstation.Server.Api.Models.Job.
+Get a specific Tgstation.Server.Api.Models.Response.JobResponse.
 
 ### Example
 ```python
@@ -81,10 +81,10 @@ api_instance = swagger_client.JobApi(swagger_client.ApiClient(configuration))
 api = 'api_example' # str | The API version being used in the form \"Tgstation.Server.Api/[API version]\"
 user_agent = 'user_agent_example' # str | The user agent of the calling client.
 instance = 56 # int | The instance ID being accessed
-id = 789 # int | The Tgstation.Server.Api.Models.EntityId.Id of the Tgstation.Server.Api.Models.Job to retrieve.
+id = 789 # int | The Tgstation.Server.Api.Models.EntityId.Id of the Tgstation.Server.Api.Models.Response.JobResponse to retrieve.
 
 try:
-    # Get a specific Tgstation.Server.Api.Models.Job.
+    # Get a specific Tgstation.Server.Api.Models.Response.JobResponse.
     api_response = api_instance.job_controller_get_id(api, user_agent, instance, id)
     pprint(api_response)
 except ApiException as e:
@@ -98,11 +98,11 @@ Name | Type | Description  | Notes
  **api** | **str**| The API version being used in the form \&quot;Tgstation.Server.Api/[API version]\&quot; | 
  **user_agent** | **str**| The user agent of the calling client. | 
  **instance** | **int**| The instance ID being accessed | 
- **id** | **int**| The Tgstation.Server.Api.Models.EntityId.Id of the Tgstation.Server.Api.Models.Job to retrieve. | 
+ **id** | **int**| The Tgstation.Server.Api.Models.EntityId.Id of the Tgstation.Server.Api.Models.Response.JobResponse to retrieve. | 
 
 ### Return type
 
-[**Job**](Job.md)
+[**JobResponse**](JobResponse.md)
 
 ### Authorization
 
@@ -116,9 +116,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **job_controller_list**
-> PaginatedJob job_controller_list(api, user_agent, instance, page=page, page_size=page_size)
+> PaginatedJobResponse job_controller_list(api, user_agent, instance, page=page, page_size=page_size)
 
-List all Tgstation.Server.Api.Models.JobTgstation.Server.Api.Models.EntityIds for the instance in reverse creation order.
+List all Tgstation.Server.Api.Models.Response.JobResponse for the instance in reverse creation order.
 
 ### Example
 ```python
@@ -138,7 +138,7 @@ page = 56 # int | The current page. (optional)
 page_size = 56 # int | The page size. (optional)
 
 try:
-    # List all Tgstation.Server.Api.Models.JobTgstation.Server.Api.Models.EntityIds for the instance in reverse creation order.
+    # List all Tgstation.Server.Api.Models.Response.JobResponse for the instance in reverse creation order.
     api_response = api_instance.job_controller_list(api, user_agent, instance, page=page, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedJob**](PaginatedJob.md)
+[**PaginatedJobResponse**](PaginatedJobResponse.md)
 
 ### Authorization
 
@@ -171,9 +171,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **job_controller_read**
-> PaginatedJob job_controller_read(api, user_agent, instance, page=page, page_size=page_size)
+> PaginatedJobResponse job_controller_read(api, user_agent, instance, page=page, page_size=page_size)
 
-Get active Tgstation.Server.Api.Models.Jobs for the instance.
+Get active Tgstation.Server.Api.Models.Response.JobResponses for the instance.
 
 ### Example
 ```python
@@ -193,7 +193,7 @@ page = 56 # int | The current page. (optional)
 page_size = 56 # int | The page size. (optional)
 
 try:
-    # Get active Tgstation.Server.Api.Models.Jobs for the instance.
+    # Get active Tgstation.Server.Api.Models.Response.JobResponses for the instance.
     api_response = api_instance.job_controller_read(api, user_agent, instance, page=page, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedJob**](PaginatedJob.md)
+[**PaginatedJobResponse**](PaginatedJobResponse.md)
 
 ### Authorization
 

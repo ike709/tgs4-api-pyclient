@@ -1,18 +1,18 @@
 # swagger_client.ConfigurationApi
 
-All URIs are relative to */*
+All URIs are relative to *http://localhost:5010*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**configuration_controller_create**](ConfigurationApi.md#configuration_controller_create) | **PUT** /Config | Create a configuration directory.
-[**configuration_controller_delete**](ConfigurationApi.md#configuration_controller_delete) | **DELETE** /Config | Deletes an empty directory
+[**configuration_controller_create_directory**](ConfigurationApi.md#configuration_controller_create_directory) | **PUT** /Config | Create a configuration directory.
+[**configuration_controller_delete_directory**](ConfigurationApi.md#configuration_controller_delete_directory) | **DELETE** /Config | Deletes an empty directory
 [**configuration_controller_directory**](ConfigurationApi.md#configuration_controller_directory) | **GET** /Config/List/{directoryPath} | Get the contents of a directory at a directoryPath
 [**configuration_controller_file**](ConfigurationApi.md#configuration_controller_file) | **GET** /Config/File/{filePath} | Get the contents of a file at a filePath
 [**configuration_controller_list**](ConfigurationApi.md#configuration_controller_list) | **GET** /Config/List | Get the contents of the root configuration directory.
 [**configuration_controller_update**](ConfigurationApi.md#configuration_controller_update) | **POST** /Config | Write to a configuration file.
 
-# **configuration_controller_create**
-> ConfigurationFile configuration_controller_create(api, user_agent, instance, body=body)
+# **configuration_controller_create_directory**
+> ConfigurationFileResponse configuration_controller_create_directory(body, api, user_agent, instance)
 
 Create a configuration directory.
 
@@ -27,31 +27,31 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.ConfigurationApi(swagger_client.ApiClient(configuration))
+body = swagger_client.Body16() # Body16 | The Tgstation.Server.Api.Models.Request.ConfigurationFileRequest representing the directory.
 api = 'api_example' # str | The API version being used in the form \"Tgstation.Server.Api/[API version]\"
 user_agent = 'user_agent_example' # str | The user agent of the calling client.
 instance = 56 # int | The instance ID being accessed
-body = swagger_client.Body16() # Body16 | The Tgstation.Server.Api.Models.ConfigurationFile representing the directory. (optional)
 
 try:
     # Create a configuration directory.
-    api_response = api_instance.configuration_controller_create(api, user_agent, instance, body=body)
+    api_response = api_instance.configuration_controller_create_directory(body, api, user_agent, instance)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ConfigurationApi->configuration_controller_create: %s\n" % e)
+    print("Exception when calling ConfigurationApi->configuration_controller_create_directory: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**Body16**](Body16.md)| The Tgstation.Server.Api.Models.Request.ConfigurationFileRequest representing the directory. | 
  **api** | **str**| The API version being used in the form \&quot;Tgstation.Server.Api/[API version]\&quot; | 
  **user_agent** | **str**| The user agent of the calling client. | 
  **instance** | **int**| The instance ID being accessed | 
- **body** | [**Body16**](Body16.md)| The Tgstation.Server.Api.Models.ConfigurationFile representing the directory. | [optional] 
 
 ### Return type
 
-[**ConfigurationFile**](ConfigurationFile.md)
+[**ConfigurationFileResponse**](ConfigurationFileResponse.md)
 
 ### Authorization
 
@@ -64,8 +64,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **configuration_controller_delete**
-> configuration_controller_delete(api, user_agent, instance, body=body)
+# **configuration_controller_delete_directory**
+> configuration_controller_delete_directory(body, api, user_agent, instance)
 
 Deletes an empty directory
 
@@ -80,26 +80,26 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.ConfigurationApi(swagger_client.ApiClient(configuration))
+body = swagger_client.Body24() # Body24 | A Tgstation.Server.Api.Models.Request.ConfigurationFileRequest representing the path to the directory to delete
 api = 'api_example' # str | The API version being used in the form \"Tgstation.Server.Api/[API version]\"
 user_agent = 'user_agent_example' # str | The user agent of the calling client.
 instance = 56 # int | The instance ID being accessed
-body = swagger_client.Body24() # Body24 | A Tgstation.Server.Api.Models.ConfigurationFile representing the path to the directory to delete (optional)
 
 try:
     # Deletes an empty directory
-    api_instance.configuration_controller_delete(api, user_agent, instance, body=body)
+    api_instance.configuration_controller_delete_directory(body, api, user_agent, instance)
 except ApiException as e:
-    print("Exception when calling ConfigurationApi->configuration_controller_delete: %s\n" % e)
+    print("Exception when calling ConfigurationApi->configuration_controller_delete_directory: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**Body24**](Body24.md)| A Tgstation.Server.Api.Models.Request.ConfigurationFileRequest representing the path to the directory to delete | 
  **api** | **str**| The API version being used in the form \&quot;Tgstation.Server.Api/[API version]\&quot; | 
  **user_agent** | **str**| The user agent of the calling client. | 
  **instance** | **int**| The instance ID being accessed | 
- **body** | [**Body24**](Body24.md)| A Tgstation.Server.Api.Models.ConfigurationFile representing the path to the directory to delete | [optional] 
 
 ### Return type
 
@@ -117,7 +117,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **configuration_controller_directory**
-> PaginatedConfigurationFile configuration_controller_directory(api, user_agent, instance, directory_path, page=page, page_size=page_size)
+> PaginatedConfigurationFileResponse configuration_controller_directory(api, user_agent, instance, directory_path, page=page, page_size=page_size)
 
 Get the contents of a directory at a directoryPath
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedConfigurationFile**](PaginatedConfigurationFile.md)
+[**PaginatedConfigurationFileResponse**](PaginatedConfigurationFileResponse.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **configuration_controller_file**
-> ConfigurationFile configuration_controller_file(api, user_agent, instance, file_path)
+> ConfigurationFileResponse configuration_controller_file(api, user_agent, instance, file_path)
 
 Get the contents of a file at a filePath
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ConfigurationFile**](ConfigurationFile.md)
+[**ConfigurationFileResponse**](ConfigurationFileResponse.md)
 
 ### Authorization
 
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **configuration_controller_list**
-> PaginatedConfigurationFile configuration_controller_list(api, user_agent, instance, page=page, page_size=page_size)
+> PaginatedConfigurationFileResponse configuration_controller_list(api, user_agent, instance, page=page, page_size=page_size)
 
 Get the contents of the root configuration directory.
 
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedConfigurationFile**](PaginatedConfigurationFile.md)
+[**PaginatedConfigurationFileResponse**](PaginatedConfigurationFileResponse.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **configuration_controller_update**
-> ConfigurationFile configuration_controller_update(api, user_agent, instance, body=body)
+> ConfigurationFileResponse configuration_controller_update(body, api, user_agent, instance)
 
 Write to a configuration file.
 
@@ -297,14 +297,14 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.ConfigurationApi(swagger_client.ApiClient(configuration))
+body = swagger_client.Body20() # Body20 | The Tgstation.Server.Api.Models.Request.ConfigurationFileRequest representing the file.
 api = 'api_example' # str | The API version being used in the form \"Tgstation.Server.Api/[API version]\"
 user_agent = 'user_agent_example' # str | The user agent of the calling client.
 instance = 56 # int | The instance ID being accessed
-body = swagger_client.Body20() # Body20 | The Tgstation.Server.Api.Models.ConfigurationFile representing the file. (optional)
 
 try:
     # Write to a configuration file.
-    api_response = api_instance.configuration_controller_update(api, user_agent, instance, body=body)
+    api_response = api_instance.configuration_controller_update(body, api, user_agent, instance)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConfigurationApi->configuration_controller_update: %s\n" % e)
@@ -314,14 +314,14 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**Body20**](Body20.md)| The Tgstation.Server.Api.Models.Request.ConfigurationFileRequest representing the file. | 
  **api** | **str**| The API version being used in the form \&quot;Tgstation.Server.Api/[API version]\&quot; | 
  **user_agent** | **str**| The user agent of the calling client. | 
  **instance** | **int**| The instance ID being accessed | 
- **body** | [**Body20**](Body20.md)| The Tgstation.Server.Api.Models.ConfigurationFile representing the file. | [optional] 
 
 ### Return type
 
-[**ConfigurationFile**](ConfigurationFile.md)
+[**ConfigurationFileResponse**](ConfigurationFileResponse.md)
 
 ### Authorization
 

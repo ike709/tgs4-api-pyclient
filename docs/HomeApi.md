@@ -1,6 +1,6 @@
 # swagger_client.HomeApi
 
-All URIs are relative to */*
+All URIs are relative to *http://localhost:5010*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**home_controller_home**](HomeApi.md#home_controller_home) | **GET** / | Main page of the Tgstation.Server.Host.Core.Application
 
 # **home_controller_create_token**
-> Token home_controller_create_token(api, user_agent, o_auth_provider=o_auth_provider)
+> TokenResponse home_controller_create_token(api, user_agent, o_auth_provider=o_auth_provider)
 
 Attempt to authenticate a Tgstation.Server.Host.Models.User using Tgstation.Server.Host.Controllers.ApiController.ApiHeaders
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Token**](Token.md)
+[**TokenResponse**](TokenResponse.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **home_controller_home**
-> ServerInformation home_controller_home(api, user_agent)
+> ServerInformationResponse home_controller_home(api, user_agent)
 
 Main page of the Tgstation.Server.Host.Core.Application
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServerInformation**](ServerInformation.md)
+[**ServerInformationResponse**](ServerInformationResponse.md)
 
 ### Authorization
 

@@ -1,6 +1,6 @@
 # swagger_client.TransferApi
 
-All URIs are relative to */*
+All URIs are relative to *http://localhost:5010*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,7 +25,7 @@ from pprint import pprint
 api_instance = swagger_client.TransferApi(swagger_client.ApiClient(configuration))
 api = 'api_example' # str | The API version being used in the form \"Tgstation.Server.Api/[API version]\"
 user_agent = 'user_agent_example' # str | The user agent of the calling client.
-ticket = 'ticket_example' # str | The Tgstation.Server.Api.Models.FileTicketResult.FileTicket for the download.
+ticket = 'ticket_example' # str | The Tgstation.Server.Api.Models.Response.FileTicketResponse.FileTicket for the download.
 
 try:
     # Downloads a file with a given ticket.
@@ -41,7 +41,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **api** | **str**| The API version being used in the form \&quot;Tgstation.Server.Api/[API version]\&quot; | 
  **user_agent** | **str**| The user agent of the calling client. | 
- **ticket** | **str**| The Tgstation.Server.Api.Models.FileTicketResult.FileTicket for the download. | 
+ **ticket** | **str**| The Tgstation.Server.Api.Models.Response.FileTicketResponse.FileTicket for the download. | 
 
 ### Return type
 
@@ -76,7 +76,7 @@ from pprint import pprint
 api_instance = swagger_client.TransferApi(swagger_client.ApiClient(configuration))
 api = 'api_example' # str | The API version being used in the form \"Tgstation.Server.Api/[API version]\"
 user_agent = 'user_agent_example' # str | The user agent of the calling client.
-ticket = 'ticket_example' # str | The Tgstation.Server.Api.Models.FileTicketResult.FileTicket for the upload.
+ticket = 'ticket_example' # str | The Tgstation.Server.Api.Models.Response.FileTicketResponse.FileTicket for the upload.
 body = swagger_client.Object() # Object |  (optional)
 
 try:
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **api** | **str**| The API version being used in the form \&quot;Tgstation.Server.Api/[API version]\&quot; | 
  **user_agent** | **str**| The user agent of the calling client. | 
- **ticket** | **str**| The Tgstation.Server.Api.Models.FileTicketResult.FileTicket for the upload. | 
+ **ticket** | **str**| The Tgstation.Server.Api.Models.Response.FileTicketResponse.FileTicket for the upload. | 
  **body** | **Object**|  | [optional] 
 
 ### Return type
